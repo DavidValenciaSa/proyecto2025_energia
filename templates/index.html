@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proyecto Talento Tech</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.ico') }}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='styles/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Energia Renovable</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#dashboard">Dashboard</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#estimador">Estimador de Energía Renovable</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#cargar">Cargar Información</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="..." />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Energia Renovable</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-fan"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">El futuro brillante de nuestro planeta comienza con la energía renovable, una fuente inagotable de esperanza que ilumina el camino hacia un mundo más limpio y sostenible.</p>
+            </div>
+        </header>
+        <!-- dashboard Section-->
+        <section class="page-section dashboard" id="dashboard">
+            <div class="container">
+                <!-- dashboard Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Dashboard</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-solar-panel"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- dashboard Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- dashboard Item 1-->
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="dashboard-item mx-auto">
+                            <img src="data:image/png;base64,{{ graph_url }}" alt="Gráfico de Barras">
+                        </div>
+                    </div>
+                    <!-- dashboard Item 2-->
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="dashboard-item mx-auto">
+                            <img src="data:image/png;base64,{{ graph_url2 }}" alt="Gráfico de Barras">
+                        
+                        </div>
+                    </div>
+                    <!-- dashboard Item 3-->
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="dashboard-item mx-auto">
+                            <p>Grafica 3</p>
+                        </div>
+                    </div>
+                    <!-- dashboard Item 4-->
+                    <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
+                        <div class="dashboard-item mx-auto">
+                            <p>Grafica 4</p>
+                        </div>
+                    </div>
+                    <!-- dashboard Item 5-->
+                    <div class="col-md-6 col-lg-6 mb-5 mb-md-0">
+                        <div class="dashboard-item mx-auto">
+                            <p>Grafica 5</p>
+                        </div>
+                    </div>
+                    <!-- dashboard Item 6-->
+                    <div class="col-md-6 col-lg-6">
+                        <div class="dashboard-item mx-auto">
+                            <p>Grafica 6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="estimador">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Estimador de Energía Renovable en el Consumo Eléctrico</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <form method="POST">
+                    <div class="row">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="consumo_total" name="consumo_total" type="text" placeholder="Enter your name..." required />
+                                    <label for="name">Consumo Total (kWh):</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About Section Button-->
+                    <div class="row">
+                        <!--- LUEGO HACEMOS ESTO-->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-7 mb-3">
+                                {% if porcentaje_renovable is not none %}
+                                    <div class="resultado">
+                                        <h4><span class="badge text-bg-success"><i class="fas fa-solar-panel"></i> El porcentaje de energía renovable en tu consumo es: {{ porcentaje_renovable | round(2) }}%</span></h4>
+                                    </div>
+                                {% elif error %}
+                                    <div class="error">
+                                        <h4><span class="badge text-bg-danger">{{ error }}</span></h4>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-xl btn-outline-light"><i class="fas fa-plug me-2"></i> Calcular</button>
+                    </div>
+                </form><br>
+                <div class="text-center mb-5">
+                    <img src="{{ url_for('static', filename='assets/img/formula.png') }}" width="50%"/>
+                </div>
+                
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="cargar">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cargar Archivo de Información</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-plug-circle-plus"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="file" data-sb-validations="required" />
+                                <label for="name">Cargar Archivo Energía Renovable World Wide : 1965~2022</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Este Archivo es Requerido.</div>
+                            </div>
+                            <!-- Submit Button-->
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Cargar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        CIAF
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Nombre Integrantes del Grupo</h4>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                       Pereira
+                    </div>
+                </div>
+            </div>
+        </footer>
+               
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>
